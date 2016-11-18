@@ -5,6 +5,12 @@ This repository documents the resources of the SHARE VM that belongs to the pape
 * Authors: Roland Kluge, Michael Stein, Gergely Varró, Andy Schürr, Matthias Hollick, Max Mühlhäuser
 * DOI: http://dx.doi.org/10.1016/j.jvlc.2016.10.003 / URL: http://www.sciencedirect.com/science/article/pii/S1045926X15300483
 
+**The VM is located at http://is.ieis.tue.nl/staff/pvgorp/share/?page=ConfigureNewSession&vdi=TODO.vdi**
+
+Credentials: ([A} = @, [D} = ., [E} = !)
+* User: sharevm[A}es[D}tu-darmstadt[D}de 
+* Passsword: ShareVM[A}RealTime[E}
+
 # FAQs or What can I do with the VM?
 
 ## Where should I start?
@@ -27,7 +33,8 @@ The Topology Control rules of kTC (and a number of other TC algorithms) can be f
 1. In eclipse, open the project *simonstrator-simrunner*
 2. Navigate to *config/rkluge/launch/"
 3. Right-click *GUIRunner-with-EMF.launch* and select *Run as -> GUIRunner-with-EMF*
-4. Type the following file name into the search bar: *jvlc_complete_evaluation.xml*
+4. Type the file name *jvlc_complete_evaluation.xml* into the search bar.
+ * This file contains all parameters of the simulation (e.g., energy model, movement model, protocol stack, overlay application).
 5. Press *Start Simulation*
 6. Two windows should pop up
  * The *Topology Visualization* window shows the current output WiFi topology 
