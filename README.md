@@ -73,7 +73,8 @@ An example:
 * ```iter#001 bTC...(algo=D_KTC(id=1), kTCParameterK=1.41)``` For comparison reasons, the batch counterpart of the current algorithm is executed on a copy of the topology and runtime statistics are printed.
 * ```iter#001 iTC vs. bTC (CE+TC) wrt. [time=27.54 / LSMs=1.00]``` At the end of a Topology Control run, the costs of the incremental and batch algorithm are compared in terms of CPU time and link state modifications. In this case, the incremental algorithm needed 27.54 times longer compare to the batch algorithm. The link state modification count is identical in this iteration because the topology is processed for the first time.
 
-**Research Questions**
+**Research Questions:**
+
 Unfortunately, the SHARE VM is not powerful enough to reproduce the full evaluation, however you can get an idea of the how the results were produced.
 * *RQ1-Correctness* After handling context events and invoking Topology Control, the per-algorithm constraints are checked and violations are reported (see ```violations=0``` above).
 * *RQ2-Incrementality* The comparison ```iTC vs. bTC``` summarizes the incrementality per Topology Control iteration.
