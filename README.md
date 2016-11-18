@@ -5,7 +5,7 @@ This repository documents the resources of the SHARE VM that belongs to the pape
 * Authors: Roland Kluge, Michael Stein, Gergely Varró, Andy Schürr, Matthias Hollick, Max Mühlhäuser
 * DOI: http://dx.doi.org/10.1016/j.jvlc.2016.10.003 / URL: http://www.sciencedirect.com/science/article/pii/S1045926X15300483
 
-**The VM is located at http://is.ieis.tue.nl/staff/pvgorp/share/?page=ConfigureNewSession&vdi=TODO.vdi**
+**The VM is located at http://is.ieis.tue.nl/staff/pvgorp/share/?page=ConfigureNewSession&vdi=XP-TUe_RK_CorrectByConstructionTC_JVLC.vdi**
 
 Credentials: ([A} = @, [D} = ., [E} = !)
 * User: sharevm[A}es[D}tu-darmstadt[D}de 
