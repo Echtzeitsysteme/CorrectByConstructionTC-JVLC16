@@ -52,3 +52,11 @@ An example:
 18-Nov-2016 10:09:12. INFO 	Total real duration: 0.01min
 18-Nov-2016 10:09:12. INFO 	iter#001 Stat  Done (duration=32ms, n=100, m=800, avgBatPct=75.32, minBatPct=50.15, maxBatPct=98.88, numEmptyNodes=0, numSCCsInInput=2, numSCCsInOutput=2)
 18-Nov-2016 10:09:12. INFO 	Simulated Realtime: 0:10:0:0 (H:m:s:ms)```
+
+**Explanation:**
+* ```iter##001``` Denotes the first iteration of the Topology Control algorithm. In this setup, Topology Control is executed periodically every 10min of simulated time.
+* ```iter#001 CEs... Adding node Node [...]``` Before running the algorithm, all pending context events are handled.
+* ```iter#001 CEs   Done (t=220ms, t_check=11ms...```` At the end of context event handling, the required CPU time for the handling and for the constraint checking is printed.
+* ```iter#001 iTC...(algo=D_KTC(id=1), kTCParameterK=1.41)``` Then, incremental the topology control algorithm is invoked (here: the traditional kTC with k=1.41). Afterwards, the required CPU time for the algorithm and the constraint checking are printed.
+* ```iter#001 bTC...(algo=D_KTC(id=1), kTCParameterK=1.41)``` For comparison reasons, the batch counterpart of the current algorithm is executed on a copy of the topology and runtime statistics are printed.
+* ```iter#001 iTC vs. bTC (CE+TC) wrt. [time=27.54 / LSMs=1.00]``` At the end of a Topology Control run, the costs of the incremental and batch algorithm are compared in terms of CPU time and link state modifications. In this case, the incremental algorithm needed 27.54 times longer compare to the batch algorithm. The link state modification count is identical in this iteration because the topology is processed for the first time.
