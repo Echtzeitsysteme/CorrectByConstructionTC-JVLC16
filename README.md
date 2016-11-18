@@ -13,6 +13,10 @@ Credentials: ([A} = @, [D} = ., [E} = !)
 
 # FAQs or What can I do with the VM?
 
+## I have problems, who can I contact?
+
+If you experience problems, please do not hesistate to write a mail to Roland Kluge (roland[D}kluge[A}es[D}tu-darmstadt[D}de).
+
 ## Where should I start?
 
 1. Navigate to the Desktop
@@ -64,7 +68,14 @@ An example:
 **Explanation:**
 * ```iter##001``` Denotes the first iteration of the Topology Control algorithm. In this setup, Topology Control is executed periodically every 10min of simulated time.
 * ```iter#001 CEs... Adding node Node [...]``` Before running the algorithm, all pending context events are handled.
-* ```iter#001 CEs   Done (t=220ms, t_check=11ms...```` At the end of context event handling, the required CPU time for the handling and for the constraint checking is printed.
+* ```iter#001 CEs   Done (t=220ms, t_check=11ms, violation=0,...``` At the end of context event handling, the required CPU time for the handling and for the constraint checking is printed. Additionally, the number of detected constraint violations is reported.
 * ```iter#001 iTC...(algo=D_KTC(id=1), kTCParameterK=1.41)``` Then, incremental the topology control algorithm is invoked (here: the traditional kTC with k=1.41). Afterwards, the required CPU time for the algorithm and the constraint checking are printed.
 * ```iter#001 bTC...(algo=D_KTC(id=1), kTCParameterK=1.41)``` For comparison reasons, the batch counterpart of the current algorithm is executed on a copy of the topology and runtime statistics are printed.
 * ```iter#001 iTC vs. bTC (CE+TC) wrt. [time=27.54 / LSMs=1.00]``` At the end of a Topology Control run, the costs of the incremental and batch algorithm are compared in terms of CPU time and link state modifications. In this case, the incremental algorithm needed 27.54 times longer compare to the batch algorithm. The link state modification count is identical in this iteration because the topology is processed for the first time.
+
+**Research Questions**
+Unfortunately, the SHARE VM is not powerful enough to reproduce the full evaluation, however you can get an idea of the how the results were produced.
+* *RQ1-Correctness* After handling context events and invoking Topology Control, the per-algorithm constraints are checked and violations are reported (see ```violations=0``` above).
+* *RQ2-Incrementality* The comparison ```iTC vs. bTC``` summarizes the incrementality per Topology Control iteration.
+* *RQ3-Performance* The CPU time and the link state modification count is recorded for all major steps of a Topology Control run (e.g., ```t=220ms, t_check=11ms```).
+* *RQ4-Generality* This is a research question that is discussed extensively in the paper. Still, the number of implemented Topology Control algorithms indicates the applicability of the approach.
