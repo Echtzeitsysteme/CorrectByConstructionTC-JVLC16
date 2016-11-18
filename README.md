@@ -51,7 +51,8 @@ An example:
 18-Nov-2016 10:09:12. INFO 	iter#001 Stat..
 18-Nov-2016 10:09:12. INFO 	Total real duration: 0.01min
 18-Nov-2016 10:09:12. INFO 	iter#001 Stat  Done (duration=32ms, n=100, m=800, avgBatPct=75.32, minBatPct=50.15, maxBatPct=98.88, numEmptyNodes=0, numSCCsInInput=2, numSCCsInOutput=2)
-18-Nov-2016 10:09:12. INFO 	Simulated Realtime: 0:10:0:0 (H:m:s:ms)```
+18-Nov-2016 10:09:12. INFO 	Simulated Realtime: 0:10:0:0 (H:m:s:ms)
+```
 
 **Explanation:**
 * ```iter##001``` Denotes the first iteration of the Topology Control algorithm. In this setup, Topology Control is executed periodically every 10min of simulated time.
