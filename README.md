@@ -22,7 +22,7 @@ This repository documents the resources of the SHARE VM that belongs to the pape
 3. The metamodel can be found in the package *de.tudarmstadt.maki.tc.cbctc.model*. 
 The Topology Control rules of kTC (and a number of other TC algorithms) can be found in the package *de.tudarmstadt.maki.tc.cbctc.algorithms*.
 
-## How can I run my own simulation?
+## How can I run a sample simulation?
 
 1. In eclipse, open the project *simonstrator-simrunner*
 2. Navigate to *config/rkluge/launch/"
@@ -32,8 +32,12 @@ The Topology Control rules of kTC (and a number of other TC algorithms) can be f
 6. Two windows should pop up
  * The *Topology Visualization* window shows the current output WiFi topology 
  * The *Simulation* window shows statistics about the progress of the simulation, simulation speed, etc.
-7. Additionally, the log output in the *Console* view of Eclipse provides information about the progress of topology control
-  , which looks as follows:```
+7. Additionally, the log output in the *Console* view of Eclipse provides information about the progress of topology control.
+
+## What do the log messages tell me?
+The *Console* view of Eclipse reports on Topology-Control-specific metrics.
+An example:
+```
 18-Nov-2016 10:09:11. INFO 	iter#001 CEs...
 18-Nov-2016 10:09:11. INFO 	Adding node Node [id=1, properties={SiS-PHY_LOCATION=PositionVector [571.6007134974011, 360.78730807559845], SiS-LOCATION_X=571.6007134974011, SiS-LOCATION_Y=360.78730807559845}]
 [...]
