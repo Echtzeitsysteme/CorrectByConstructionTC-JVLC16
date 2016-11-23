@@ -11,7 +11,7 @@ This repository documents the resources of the SHARE VM that belongs to the pape
 
 # FAQs or What can I do with the VM?
 
-## I have problems, who can I contact?
+## Who can I contact?
 
 If you experience problems, please do not hesistate to write a mail to Roland Kluge (roland[D}kluge[A}es[D}tu-darmstadt[D}de).
 
