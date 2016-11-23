@@ -47,29 +47,29 @@ The Topology Control rules of kTC (and a number of other TC algorithms) can be f
 The *Console* view of Eclipse reports on Topology-Control-specific metrics.
 An example:
 ```
-18-Nov-2016 10:09:11. INFO 	iter#001 CEs...
-18-Nov-2016 10:09:11. INFO 	Adding node Node [id=1, properties={SiS-PHY_LOCATION=PositionVector [571.6007134974011, 360.78730807559845], SiS-LOCATION_X=571.6007134974011, SiS-LOCATION_Y=360.78730807559845}]
+23-Nov-2016 17:06:46. INFO 	iter#001 CEs...
+23-Nov-2016 17:06:46. INFO 	Adding node Node [id=1, properties={SiS-PHY_LOCATION=PositionVector [13.454846479205782, 73.0], SiS-LOCATION_X=13.454846479205782, SiS-LOCATION_Y=73.0}]
 [...]
-18-Nov-2016 10:09:12. INFO 	Adding node Node [id=100, properties={SiS-PHY_LOCATION=PositionVector [375.80031121334616, 375.88742237059733], SiS-LOCATION_X=375.80031121334616, SiS-LOCATION_Y=375.88742237059733}]
-18-Nov-2016 10:09:12. INFO 	iter#001 CEs   Done (t=220ms, t_check=11ms, numCEs=[+n= 100, -n=   0, +e= 800, -e=   0, mod-d=   0, mod-w=   0, mod-p=   0])
-18-Nov-2016 10:09:12. INFO 	iter#001 iTC...(algo=D_KTC(id=1), kTCParameterK=1.41)
-18-Nov-2016 10:09:12. INFO 	iter#001 iTC   Done (t=138ms,  t_check=8ms,  violations=0, allLSMs=1401 [[total count: a= 469, i=622, u= 310, effective counts: a= 264, i=536, u=   0]], effLSMs=800)
-18-Nov-2016 10:09:12. INFO 	iter#001 bTC...(algo=D_KTC(id=1), kTCParameterK=1.41)
-18-Nov-2016 10:09:12. INFO 	iter#001 bTC   Done (t=13ms,  t_check=4ms, violations=0, allLSMs=800 [[total count: a= 264, i=536, u=   0, effective counts: a= 264, i=536, u=   0]], effLSMs=800)
-18-Nov-2016 10:09:12. INFO 	iter#001 iTC vs. bTC (CE+TC) wrt. [time=27.54 / LSMs=1.00]
-18-Nov-2016 10:09:12. INFO 	iter#001 Stat..
-18-Nov-2016 10:09:12. INFO 	Total real duration: 0.01min
-18-Nov-2016 10:09:12. INFO 	iter#001 Stat  Done (duration=32ms, n=100, m=800, avgBatPct=75.32, minBatPct=50.15, maxBatPct=98.88, numEmptyNodes=0, numSCCsInInput=2, numSCCsInOutput=2)
-18-Nov-2016 10:09:12. INFO 	Simulated Realtime: 0:10:0:0 (H:m:s:ms)
+23-Nov-2016 17:06:46. INFO 	Adding node Node [id=101, properties={SiS-PHY_LOCATION=PositionVector [44.04043792076475, 106.56416757687579], SiS-LOCATION_X=44.04043792076475, SiS-LOCATION_Y=106.56416757687579}]
+23-Nov-2016 17:06:46. INFO 	iter#001 CEs   Done (t=247ms, t_check=7ms, numCEs=[+n= 101, -n=   0, +e=1392, -e=   0, mod-d=   0, mod-w=   0, mod-p=   0])
+23-Nov-2016 17:06:46. INFO 	iter#001 iTC...(algo=D_KTC(id=1), parameters=Parameters: {a=2.0, coneCount=4.0, k=1.41})
+23-Nov-2016 17:06:47. INFO 	iter#001 iTC   Done (t=365ms,  t_check=89ms,  violations=0, allLSMs=1920 [[total count: a=1030, i=624, u= 266, effective counts: a= 790, i=602, u=   0]], effLSMs=1392)
+23-Nov-2016 17:06:47. INFO 	iter#001 bTC...(algo=D_KTC(id=1), parameters=Parameters: {a=2.0, coneCount=4.0, k=1.41})
+23-Nov-2016 17:06:47. INFO 	iter#001 bTC   Done (t=123ms,  t_check=115ms, violations=0, allLSMs=1392 [[total count: a= 790, i=602, u=   0, effective counts: a= 790, i=602, u=   0]], effLSMs=1392)
+23-Nov-2016 17:06:47. INFO 	iter#001 iTC vs. bTC (CE+TC) wrt. [time=4.98 / LSMs=1.00]
+23-Nov-2016 17:06:47. INFO 	iter#001 Stat..
+23-Nov-2016 17:06:47. INFO 	Total real duration: 0.02min
+23-Nov-2016 17:06:47. INFO 	iter#001 Stat  Done (duration=123ms, n=101, m=1812, avgBatPct=71.24, minBatPct=47.09, maxBatPct=96.27, numEmptyNodes=0, numSCCsInInput=1, numSCCsInOutput=1)
+23-Nov-2016 17:06:47. INFO 	Simulated Realtime: 0:10:0:0 (H:m:s:ms)
 ```
 
 **Explanation:**
 * ```iter##001``` Denotes the first iteration of the Topology Control algorithm. In this setup, Topology Control is executed periodically every 10min of simulated time.
 * ```iter#001 CEs... Adding node Node [...]``` Before running the algorithm, all pending context events are handled.
-* ```iter#001 CEs   Done (t=220ms, t_check=11ms, violation=0,...``` At the end of context event handling, the required CPU time for the handling and for the constraint checking is printed. Additionally, the number of detected constraint violations is reported.
-* ```iter#001 iTC...(algo=D_KTC(id=1), kTCParameterK=1.41)``` Then, incremental the topology control algorithm is invoked (here: the traditional kTC with k=1.41). Afterwards, the required CPU time for the algorithm and the constraint checking are printed.
-* ```iter#001 bTC...(algo=D_KTC(id=1), kTCParameterK=1.41)``` For comparison reasons, the batch counterpart of the current algorithm is executed on a copy of the topology and runtime statistics are printed.
-* ```iter#001 iTC vs. bTC (CE+TC) wrt. [time=27.54 / LSMs=1.00]``` At the end of a Topology Control run, the costs of the incremental and batch algorithm are compared in terms of CPU time and link state modifications. In this case, the incremental algorithm needed 27.54 times longer compare to the batch algorithm. The link state modification count is identical in this iteration because the topology is processed for the first time.
+* ```iter#001 CEs   Done (t=247ms, t_check=7ms, violation=0,...``` At the end of context event handling, the required CPU time for the handling and for the constraint checking is printed. Additionally, the number of detected constraint violations is reported.
+* ```iter#001 iTC...(algo=D_KTC(id=1), parameters=Parameters: {a=2.0, coneCount=4.0, k=1.41})``` Then, incremental the topology control algorithm is invoked (here: the traditional kTC with k=1.41). Afterwards, the required CPU time for the algorithm and the constraint checking are printed.
+* ```iter#001 bTC...(algo=D_KTC(id=1), parameters=Parameters: {a=2.0, coneCount=4.0, k=1.41})``` For comparison reasons, the batch counterpart of the current algorithm is executed on a copy of the topology and runtime statistics are printed.
+* ```iter#001 iTC vs. bTC (CE+TC) wrt. [time=4.98 / LSMs=1.00]``` At the end of a Topology Control run, the costs of the incremental and batch algorithm are compared in terms of CPU time and link state modifications. In this case, the incremental algorithm needed ca. 5 times longer compare to the batch algorithm. The link state modification count is identical in this iteration because the topology is processed for the first time.
 
 # Concerning the research questions
 
