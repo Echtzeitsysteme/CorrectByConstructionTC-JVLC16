@@ -17,10 +17,9 @@ If you experience problems, please do not hesistate to write a mail to Roland Kl
 
 ## Where should I start?
 
-1. Navigate to the Desktop
-2. Open the folder *cbcTC*
-3. Open Eclipse by double-clicking *eclipse.exe*
-4. All material is contained in the workspace that opens up.
+1. Navigate to the Desktop (*Win+D*)
+2. Double-click *Eclipse Neon 1.a*
+3. All material is contained in the workspace that opens up.
 
 ## Where is the metamodel? Where are the Topology Control rules?
 
