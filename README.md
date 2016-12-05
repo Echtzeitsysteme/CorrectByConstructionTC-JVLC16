@@ -1,5 +1,3 @@
-**The VM and its corresponding documentation are still under construction. Please come back to this page later.**
-
 # CorrectByConstructionTC-JVLC16
 This repository documents the resources of the SHARE VM that belongs to the paper *Roland Kluge, Michael Stein, Gergely Varró, Andy Schürr, Matthias Hollick, Max Mühlhäuser: "A Systematic Approach to Constructing Incremental Topology Control Algorithms Using Graph Transformation" DOI: http://dx.doi.org/10.1016/j.jvlc.2016.10.003 / URL: http://www.sciencedirect.com/science/article/pii/S1045926X15300483*
 
